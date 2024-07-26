@@ -1,0 +1,30 @@
+<%= form_with model: spot do |f| %>
+  <%= render "layouts/error_messages", model: f.object %>
+
+  <div class="mb-2">
+    <%= f.label :name, "name" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-2">
+    <%= f.label :content, "content" %>
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+
+  <div class="mb-2">
+    <%= label_tag :zipcode, "zipcode" %>
+    <%= text_field_tag :zipcode, nil, class: "form-control" %>
+  </div>
+
+  <div class="mb-2">
+    <%= f.label :address, "address" %>
+    <%= f.text_field :address, class: "form-control" %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :weather, "weather" %>
+    <%= f.select :weather, Spot.weathers_i18n.invert, {}, { class: "form-control" } %>
+  </div>
+
+  <%= f.submit "post", class: "btn btn-primary btn-block" %>
+<% end %>

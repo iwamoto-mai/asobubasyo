@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Admin.create!(email: "admin@test.com", password: "password")
+
+user_names = %w( tanaka yamada satou suzuki )
+
+user_names.each.with_index(1) { | name, i | User.create!(name: name, email: "user#{i}@test.com", password: "password") }

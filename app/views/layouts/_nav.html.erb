@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/" data-turbolinks="false">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <% if current_user %>
+          <%= link_to destroy_user_session_path, class: "nav-link nav-item", method: :delete do %>
+            <i class="fa-solid fa-right-from-bracket"></i><span class="ml-1">log_out</span>
+          <% end %>
+        <% elsif current_admin %>
+          <%= link_to "admin_log_out", destroy_admin_session_path, class: "nav-item nav-link", method: :delete %>
+          <i class="fa-solid fa-right-from-bracket"></i>
+        <% else %>
+          <%= link_to "sign_in", new_user_session_path, class: "nav-item nav-link" %>
+          <i class="fa-solid fa-right-to-bracket"></i>
+          <%= link_to "sign_up", new_user_registration_path, class: "nav-item nav-link" %>
+          <i class="fa-solid fa-right-to-bracket"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>

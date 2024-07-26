@@ -1,0 +1,20 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>address</th>
+      <th>weather</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% spots.each do |spot| %>
+      <tr>
+        <td><%= spot.name %></td>
+        <td><%= spot.address %></td>
+        <td><%= spot.weather_i18n %></td>
+        <td><%= link_to "show", spot_path(spot), class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

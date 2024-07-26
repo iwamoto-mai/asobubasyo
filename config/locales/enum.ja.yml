@@ -1,0 +1,6 @@
+ja:
+  enums:
+    spot:
+      weather:
+        sunny: 晴れ
+        rainy: 雨

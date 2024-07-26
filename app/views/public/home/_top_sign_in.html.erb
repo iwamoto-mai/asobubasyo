@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-8 order-md-2">
+    <%= render 'public/home/search' %>
+    <div id="map"></div>
+    <%= render 'public/spots/spots', spots: @spots %>
+  </div>
+  <div class="col-md-4 order-md-1">
+    <h2>post_form</h2>
+    <%= render 'public/spots/form', spot: @spot %>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'map_index', 'data-turbolinks-track': 'reload' %>

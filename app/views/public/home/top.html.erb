@@ -1,0 +1,6 @@
+<% if current_user %>
+  <%= render "public/home/top_sign_in" %>
+<% else %>
+  <%= render "public/home/top_sign_out" %>
+<% end %>
+<%= javascript_pack_tag "jpostal",  'data-turbolinks-track': 'reload' %>
