@@ -21,6 +21,9 @@
         </tr>       
       </tbody>
     </table>
+    <div id="favorite__spot-<%= @spot.id %>">
+      <%= render "public/favorites/favorite_button", spot: @spot %>
+    </div>
   </div>
   <div class="col-md-7">
     <div id="map" data-spot=<%= @spot.id %>></div>

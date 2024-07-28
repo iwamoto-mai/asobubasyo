@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: "home#top"
     resources :users, only: [:show, :edit, :update, :destroy]
-    resources :spots, only: [:index, :show, :create]
+    resources :spots, only: [:index, :show, :create] do
+      resource :favorites, only: [:create, :destroy]
+    end
   end
   
   devise_for :admins, path: "admin/admins", controllers: {
