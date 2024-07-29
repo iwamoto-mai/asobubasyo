@@ -1,24 +1,24 @@
-<h1>Spot</h1>
+<h1>施設</h1>
 <div class="row">
   <div class="col-md-5">
     <table class="table table-bordered">
       <tbody>
         <tr>
-          <th>name</th>
+          <th>施設名</th>
           <td><%= @spot.name %></td>
         </tr>
         <tr>
-          <th>content</th>
+          <th>コメント</th>
           <td><%= @spot.content %></td>
         </tr>
         <tr>
-          <th>address</th>
+          <th>県</th>
           <td><%= @spot.address %></td>
         </tr>
         <tr>
-          <th>weather</th>
+          <th>天気</th>
           <td><%= @spot.weather_i18n %></td>
-        </tr>       
+        </tr>
       </tbody>
     </table>
     <div id="favorite__spot-<%= @spot.id %>">

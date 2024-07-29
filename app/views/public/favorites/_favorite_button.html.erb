@@ -1,5 +1,5 @@
 <% if current_user.favorite?(spot) %>
-  <%= link_to "unfavorite", spot_favorites_path(spot), method: :delete, remote: true, class: "btn btn-danger" %>
+  <%= link_to "お気に入りを外す", spot_favorites_path(spot), method: :delete, remote: true, class: "btn btn-danger" %>
 <% else %>
-  <%= link_to "favorite", spot_favorites_path(spot), method: :post, remote: true, class: "btn btn-primary" %>
+  <%= link_to "お気に入り", spot_favorites_path(spot), method: :post, remote: true, class: "btn btn-primary" %>
 <% end %>

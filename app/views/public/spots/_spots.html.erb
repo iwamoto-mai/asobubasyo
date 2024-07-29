@@ -1,9 +1,9 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>name</th>
-      <th>address</th>
-      <th>weather</th>
+      <th>施設名</th>
+      <th>住所</th>
+      <th>天気</th>
       <th></th>
     </tr>
   </thead>
@@ -13,7 +13,7 @@
         <td><%= spot.name %></td>
         <td><%= spot.address %></td>
         <td><%= spot.weather_i18n %></td>
-        <td><%= link_to "show", spot_path(spot), class: "btn btn-primary" %></td>
+        <td><%= link_to "詳細", spot_path(spot), class: "btn btn-primary" %></td>
       </tr>
     <% end %>
   </tbody>

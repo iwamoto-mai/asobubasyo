@@ -12,6 +12,18 @@ class User < ApplicationRecord
   has_many :reverse_relationships, class_name: "Relationship", foreign_key: :followed_id
   has_many :follower_users, through: :reverse_relationships, source: :follower
   
+  def follow(user)
+    self.relationships.find_or_create_by(followed_id: user.id)
+  end
+  
+  def unfollow(user)
+    self.relationships.find_by(followed_id: user.id)&.destroy
+  end
+  
+  def following?(user)
+    self.following_users.include?(user)
+  end
+  
   has_many :favorites, dependent: :destroy
   has_many :favorite_spots, through: :favorites, source: :spot
   

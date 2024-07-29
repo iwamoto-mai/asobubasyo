@@ -2,6 +2,7 @@
   <div class="d-flex my-2">
     <%= f.search_field :keyword, value: params[:keyword], placeholder: "keyword search", class: "form-control w-50" %>
     <%= f.select :weather, Spot.weathers_i18n.invert, { include_blank: "--weather search--", selected: params[:weather] }, { class: "form-control w-25" } %>
-    <%= f.submit "search", class: "btn btn-primary w-25" %>
+    <%= f.submit "検索", class: "btn btn-primary w-25" %>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </div>
 <% end %>
