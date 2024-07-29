@@ -1,5 +1,11 @@
-<%= @user.inspect %>
+<h4>user_name:<%= user.name %></h4>
 
-<div id="follow__user-<%= @user.id %>">
-  <%= render 'public/relationships/follow_button', user: @user %>
+<%= link_to "マイページ", user_path(user), class: "btn btn-primary btn-block mb-2" %>
+<%= link_to "フォロー一覧", followings_user_path(user), class: "btn btn-primary btn-block mb-2" %>
+<%= link_to "フォロワー一覧", followers_user_path(user), class: "btn btn-primary btn-block mb-2" %>
+<%= link_to "お気に入りスポット", favorites_user_path(user), class: "btn btn-primary btn-block mb-2" %>
+
+
+<div id="follow__user-<%= user.id %>" class="mt-5">
+  <%= render 'public/relationships/follow_button', user: user %>
 </div>

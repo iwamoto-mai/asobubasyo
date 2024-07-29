@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     sessions: "admin/admins/sessions"
   }
   namespace :admin do
-    root to: 'home#top'
+    root to: 'users#index'
+    resources :users, only: [:index, :destroy]
+    resources :spots, only: [:index, :destroy]
   end
 end
