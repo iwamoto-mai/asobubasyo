@@ -2,8 +2,8 @@
   <thead>
     <tr>
       <th>id</th>
-      <th>user名</th>
-      <th>email</th>
+      <th>ユーザー名</th>
+      <th>Eメール</th>
       <th></th>
     </tr>
   </thead>
@@ -13,7 +13,7 @@
         <td><%= user.id %></td>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
-        <td><%= link_to "delete", admin_user_path(user), method: :delete, data: { confirm: "reary?" }, class: "btn btn-primary" %></td>
+        <td><%= link_to "削除", admin_user_path(user), method: :delete, data: { confirm: "reary?" }, class: "btn btn-primary" %></td>
       </tr>
     <% end %>
   </tbody>

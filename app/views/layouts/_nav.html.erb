@@ -15,7 +15,7 @@
           <%= link_to "フォロワー", followers_user_path(current_user), class: "nav-link nav-item" %>
           <%= link_to "お気に入り", favorites_user_path(current_user), class: "nav-link nav-item" %>
         <% elsif current_admin %>
-          <%= link_to "admin_log_out", destroy_admin_session_path, class: "nav-item nav-link", method: :delete %>
+          <%= link_to "管理者ログアウト", destroy_admin_session_path, class: "nav-item nav-link", method: :delete %>
           <i class="fa-solid fa-right-from-bracket"></i>
         <% else %>
           <%= link_to "ログイン", new_user_session_path, class: "nav-item nav-link" %>
