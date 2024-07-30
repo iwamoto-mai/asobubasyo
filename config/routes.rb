@@ -13,7 +13,7 @@ Rails.application.routes.draw do
         get :favorites
       end
     end
-    resources :spots, only: [:index, :show, :create] do
+    resources :spots, only: [:index, :show, :create, :edit, :update, :destroy] do
       resource :favorites, only: [:create, :destroy]
     end
   end

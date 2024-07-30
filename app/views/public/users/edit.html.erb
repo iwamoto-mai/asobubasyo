@@ -1,0 +1,24 @@
+<%= form_with model: @user do |f| %>
+  <%= render "layouts/error_messages", model: f.object %>
+
+  <div class="mb-2">
+    <%= f.label :name, "user_name" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-2">
+    <%= f.label :password, "password" %>
+    <%= f.password_field :password, class: "form-control" %>
+  </div>
+  
+  <div class="mb-2">
+    <%= f.label :password_confirmation, "password_confirmation" %>
+    <%= f.password_field :password_confirmation, class: "form-control" %>
+  </div>
+  
+  <div class="my-4">
+    <%= f.submit "update", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to "destroy", user_path(@user), method: :delete, data: { confirm: "reary?" }, class: "btn btn-danger" %>
