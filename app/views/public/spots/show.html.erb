@@ -30,10 +30,10 @@
   </div>
 </div>
 
-<%= link_to "topページ", root_path, class: "btn btn-primary", data: { turbolinks: false } %>
+<%= link_to "トップページ", root_path, class: "btn btn-primary", data: { turbolinks: false } %>
 
 <% if current_user == @spot.user %>
-  <%= link_to "edit", edit_spot_path(@spot), class: "btn btn-warning", data: { turbolinks: false } %>
+  <%= link_to "変更", edit_spot_path(@spot), class: "btn btn-warning", data: { turbolinks: false } %>
 <% end %>
 
 <%= javascript_pack_tag 'map_show', 'data-turbolinks-track': 'reload' %>
