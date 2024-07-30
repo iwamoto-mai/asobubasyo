@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   }
   scope module: :public do
     root to: "home#top"
+    post "users/guest_sign_in", to: "users#guest_sign_in", as: "guest_sign_in"
     resources :users, only: [:show, :edit, :update, :destroy] do
       resource :relationships, only: [:create, :destroy]
       member do

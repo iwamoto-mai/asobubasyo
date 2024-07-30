@@ -42,6 +42,17 @@ class Public::UsersController < ApplicationController
     @spots = @user.favorite_spots
   end
 
+  def guest_sign_in
+    @user = User.find_or_initialize_by(email: "guest@test.com")
+    @user.assign_attributes(
+        password: SecureRandom.hex(8),
+        name: "guest"
+      )
+    @user.save
+    sign_in(:user, @user, bypass: true)
+    redirect_to root_url
+  end
+
   private
 
   def correct_user
