@@ -3,7 +3,10 @@ class Public::HomeController < ApplicationController
     @spot = Spot.new
     @spots = Spot.all
     @spots = @spots.where(weather: params[:weather]) if params[:weather].present?
-    @spots = @spots.where('name LIKE(?)', "%#{params[:keyword]}%")
-              .or(@spots.where('content LIKE(?)', "%#{params[:keyword]}%")) if params[:keyword].present?
+    if params[:keyword].present?
+      @spots = @spots.where('name LIKE(?)', "%#{params[:keyword]}%")
+                .or(@spots.where('content LIKE(?)', "%#{params[:keyword]}%"))
+                .or(@spots.where('address LIKE(?)', "%#{params[:keyword]}%"))
+    end
   end
 end

@@ -1,27 +1,35 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="/" data-turbolinks="false">Navbar</a>
+    <a class="navbar-brand" href="/" data-turbolinks="false">遊び場検索</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <% if current_user %>
-          <%= link_to destroy_user_session_path, class: "nav-link nav-item", method: :delete do %>
-            <i class="fa-solid fa-right-from-bracket"></i><span class="ml-1">log_out</span>
-          <% end %>
           <%= link_to "マイページ", user_path(current_user), class: "nav-link nav-item" %>
           <%= link_to "フォロー", followings_user_path(current_user), class: "nav-link nav-item" %>
           <%= link_to "フォロワー", followers_user_path(current_user), class: "nav-link nav-item" %>
           <%= link_to "お気に入り", favorites_user_path(current_user), class: "nav-link nav-item" %>
+          
+          <%= link_to destroy_user_session_path, class: "nav-link nav-item", method: :delete do %>
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span class="ml-1">log_out</span>
+          <% end %>
         <% elsif current_admin %>
-          <%= link_to "管理者ログアウト", destroy_admin_session_path, class: "nav-item nav-link", method: :delete %>
-          <i class="fa-solid fa-right-from-bracket"></i>
+          <%= link_to destroy_admin_session_path, class: "nav-item nav-link", method: :delete do %>
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span class="ml-1">管理者ログアウト</span>
+          <% end %>
         <% else %>
-          <%= link_to "ログイン", new_user_session_path, class: "nav-item nav-link" %>
-          <i class="fa-solid fa-right-to-bracket"></i>
-          <%= link_to "新規登録", new_user_registration_path, class: "nav-item nav-link" %>
-          <i class="fa-solid fa-right-to-bracket"></i>
+          <%= link_to new_user_session_path, class: "nav-item nav-link" do %>
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <span class="ml-1">ログイン</span>
+          <% end %>
+          <%= link_to new_user_registration_path, class: "nav-item nav-link" do %>
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <span class="ml-1">新規登録</span>
+          <% end %>
         <% end %>
       </div>
     </div>

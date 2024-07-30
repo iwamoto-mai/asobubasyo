@@ -1,24 +1,29 @@
-<%= form_with model: @user do |f| %>
-  <%= render "layouts/error_messages", model: f.object %>
-
-  <div class="mb-2">
-    <%= f.label :name, "user_name" %>
-    <%= f.text_field :name, class: "form-control" %>
+<div class="row">
+  <div class="col-md-4 offset-md-4 col-sm-8 offset-sm-2">
+    <h1 class="my-4">UserEdit</h1>
+    <%= form_with model: @user do |f| %>
+      <%= render "layouts/error_messages", model: f.object %>
+    
+      <div class="mb-2">
+        <%= f.label :name, "user_name" %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+    
+      <div class="mb-2">
+        <%= f.label :password, "password" %>
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+      
+      <div class="mb-2">
+        <%= f.label :password_confirmation, "password_confirmation" %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+      
+      <div class="my-4">
+        <%= f.submit "update", class: "btn btn-primary btn-block" %>
+      </div>
+    <% end %>
+    
+    <%= link_to "destroy", user_path(@user), method: :delete, data: { confirm: "reary?" }, class: "btn btn-danger btn-block" %>
   </div>
-
-  <div class="mb-2">
-    <%= f.label :password, "password" %>
-    <%= f.password_field :password, class: "form-control" %>
-  </div>
-  
-  <div class="mb-2">
-    <%= f.label :password_confirmation, "password_confirmation" %>
-    <%= f.password_field :password_confirmation, class: "form-control" %>
-  </div>
-  
-  <div class="my-4">
-    <%= f.submit "update", class: "btn btn-primary" %>
-  </div>
-<% end %>
-
-<%= link_to "destroy", user_path(@user), method: :delete, data: { confirm: "reary?" }, class: "btn btn-danger" %>
+</div>

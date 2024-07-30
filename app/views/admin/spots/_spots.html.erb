@@ -15,7 +15,7 @@
         <td><%= spot.name %></td>
         <td><%= spot.address %></td>
         <td><%= spot.weather_i18n %></td>
-        <td><%= link_to "削除", admin_spot_path(spot), method: :delete, data: { confirm: "reary?" }, class: "btn btn-primary" %></td>
+        <td><%= link_to "削除", admin_spot_path(spot), method: :delete, data: { confirm: "reary?" }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
